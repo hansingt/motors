@@ -1,0 +1,28 @@
+[package]
+name = "motors"
+version = "0.1.0"
+description = "Platform and hardware agnostig motor drivers using embedded-hal"
+authors = ["hansingt"]
+categories = ["mebedded", "no-std"]
+keywords = ["Motors", "embedded-hal", "embedded-hal-driver", "hal"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/hansingt/motors"
+repository = "https://github.com/hansingt/motors"
+edition = "2021"
+rust-version = "1.60"
+include = [
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "src/**",
+]
+
+[dependencies]
+embedded-hal = { version = "1.0.0" }
+
+[dev-dependencies]
+coverage-helper = { version = "0.2.2" }
+
+[lints.rust]
+unexpected_cfgs = { level = "allow", check-cfg = ["cfg(coverage_nightly)"] }
